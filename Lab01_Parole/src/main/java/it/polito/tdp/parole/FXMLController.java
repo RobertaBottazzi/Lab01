@@ -40,10 +40,14 @@ public class FXMLController {
     
     @FXML
     void doInsert(ActionEvent event) {
+    	String lista = "";
     	Long start=System.nanoTime();
     	String parola=this.txtParola.getText();
     	elenco.addParola(parola);
-    	txtResult.setText(elenco.getElenco().toString());
+    	for(String s:elenco.getElenco()) {
+    		lista+=s+"\n";
+    	}
+    	txtResult.setText(lista);
     	Long end=System.nanoTime();
     	txtTime.setText(String.valueOf(end-start));
     }
@@ -59,10 +63,14 @@ public class FXMLController {
     
     @FXML
     void doCancella(ActionEvent event) {
+    	String lista="";
     	Long start=System.nanoTime();
     	String cancella=txtResult.getSelectedText();
     	elenco.remove(cancella);
-    	txtResult.setText(elenco.getElenco().toString());
+    	for(String s:elenco.getElenco()) {
+    		lista+=s+"\n";
+    	}
+    	txtResult.setText(lista);
     	Long end=System.nanoTime();
     	txtTime.setText(String.valueOf(end-start));
     }
