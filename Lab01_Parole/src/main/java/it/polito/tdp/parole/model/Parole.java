@@ -34,7 +34,10 @@ public class Parole {
 	public void reset() {
 		parole.clear();
 	}
-
+	
+	public void remove(String p) {
+		parole.remove(p);
+	}
 	public List<String> getParole() {
 		return parole;
 	}
