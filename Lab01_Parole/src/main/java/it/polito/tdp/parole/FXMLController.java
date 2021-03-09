@@ -31,15 +31,20 @@ public class FXMLController {
 
     @FXML
     private Button btnReset;
-
+    
+    private Parole parole= new Parole();
+    
     @FXML
     void doInsert(ActionEvent event) {
-    	// TODO
+    	String parola=this.txtParola.getText();
+    	parole.addParola(parola);
+    	txtResult.setText(parole.getElenco().toString());
     }
 
     @FXML
     void doReset(ActionEvent event) {
-    	// TODO
+    	parole.reset();
+    	txtResult.setText("");    	
     }
 
     @FXML
