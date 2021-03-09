@@ -8,6 +8,7 @@ public class Parole {
 	
 	public Parole() {
 		parole= new ArrayList<>();
+		//parole= new LinkedList<>();
 	}
 	
 	public void addParola(String p) {
@@ -25,7 +26,7 @@ public class Parole {
 		parole.sort(new Comparator<String>() {
 			@Override
 			public int compare(String o1, String o2) {
-				return o1.compareTo(o2);
+				return o1.compareToIgnoreCase(o2);
 			}			
 		});
 		return parole;
@@ -45,14 +46,5 @@ public class Parole {
 	public void setParole(List<String> parole) {
 		this.parole = parole;
 	}
-
-	@Override
-	public String toString() {
-		return parole + "\n";
-	}
-
-	
-	
-	
 
 }
